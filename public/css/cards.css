@@ -1,4 +1,6 @@
+
 .cards {
+    transition: all 2s;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,13 +10,24 @@
 }
 
 .carta {
+    transition: all 2s;
     width: 200px !important;
     padding: 6px;
     margin: 15px;
     flex-wrap: wrap;
     background: #1a151e;
 }
+.carta div{
+    width: 100%;
+    height: 100%;
+    transition: all 2s;
+}
 
 .cardImage {
+    transition: all 2s;
     width: 100%;
+}
+.active1{
+    transition: all 2s;
+    transform: rotate(-65deg)
 }

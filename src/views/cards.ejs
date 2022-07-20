@@ -13,41 +13,65 @@
 <body>
   <%- include("./partials/header") -%>
     <section class="cards">
-      <div class="carta">
-        <img src="images/cards/aquarius.png" alt="stars" class="cardImage" id="card1">
+      <div class="carta" >
+        <div id="card1">
+          <img src="images/cards/aquarius.png" alt="stars" class="cardImage" >
+        </div>
       </div>
-      <div class="carta">
-        <img src="images/cards/aries.png" alt="stars" class="cardImage" id="card2">
+      <div class="carta" >
+        <div id="card2">
+          <img src="images/cards/aries.png" alt="stars" class="cardImage" >
+        </div>
       </div>
-      <div class="carta">
-        <img src="images/cards/cancer.png" alt="stars" class="cardImage" id="card3">
+      <div class="carta" >
+        <div id="card3">
+          <img src="images/cards/cancer.png" alt="stars" class="cardImage" >
+        </div>
       </div>
-      <div class="carta">
-        <img src="images/cards/capricornio.png" alt="stars" class="cardImage" id="card4">
+      <div class="carta" >
+        <div id="card4">
+          <img src="images/cards/capricornio.png" alt="stars" class="cardImage" >
+        </div>
       </div>
-      <div class="carta">
-        <img src="images/cards/geminis.png" alt="stars" class="cardImage" id="card5">
+      <div class="carta" >
+        <div id="card5">
+          <img src="images/cards/geminis.png" alt="stars" class="cardImage" >
+        </div>
       </div>
-      <div class="carta">
-        <img src="images/cards/leo.png" alt="stars" class="cardImage" id="card6">
+      <div class="carta" >
+        <div id="card6">
+          <img src="images/cards/leo.png" alt="stars" class="cardImage" >
+        </div>
       </div>
-      <div class="carta">
-        <img src="images/cards/libra.png" alt="stars" class="cardImage" id="card7">
+      <div class="carta" >
+        <div id="card7">
+          <img src="images/cards/libra.png" alt="stars" class="cardImage" >
+        </div>
       </div>
-      <div class="carta">
-        <img src="images/cards/piscis.png" alt="stars" class="cardImage" id="card8">
+      <div class="carta" >
+        <div id="card8">
+          <img src="images/cards/piscis.png" alt="stars" class="cardImage" >
+        </div>
       </div>
-      <div class="carta">
-        <img src="images/cards/Sagitario.png" alt="stars" class="cardImage" id="card9">
+      <div class="carta" >
+        <div id="card9">
+          <img src="images/cards/Sagitario.png" alt="stars" class="cardImage" >
+        </div>
       </div>
-      <div class="carta">
-        <img src="images/cards/scorpio.png" alt="stars" class="cardImage" id="card10">
+      <div class="carta" >
+        <div id="card10">
+          <img src="images/cards/scorpio.png" alt="stars" class="cardImage" >
+        </div>
       </div>
-      <div class="carta">
-        <img src="images/cards/taurus.png" alt="stars" class="cardImage" id="card11">
+      <div class="carta" >
+        <div id="card11">
+          <img src="images/cards/taurus.png" alt="stars" class="cardImage" >
+        </div>
       </div>
-      <div class="carta">
-        <img src="images/cards/virgo.png" alt="stars" class="cardImage" id="card12">
+      <div class="carta" >
+        <div id="card12">
+          <img src="images/cards/virgo.png" alt="stars" class="cardImage" >
+        </div>
       </div>
     </section>
     <%- include("./partials/footer") -%>
@@ -64,27 +88,25 @@
         let card10 = document.getElementById("card10")
         let card11 = document.getElementById("card11")
         let card12 = document.getElementById("card12")
+        
         let cards = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12]
 
         cards.forEach(function (valor, indice, array) {
-          valor.addEventListener("mouseover", function () {
-            console.error("HOLAAA");
+          valor.addEventListener("click", function () {
+            cards.forEach(function (valor1, indice1, array1) {
+              valor1.classList.remove("active1")
+            })
+            valor.classList.add("active1")
+            console.log(valor)
           })
         });
+        // cards.forEach(function (valor, indice, array) {
+        //   valor.addEventListener("mouseout", function () {
+        //     valor.classList.remove("active1")
+        //     console.log(valor)
+        //   })
+        // });
 
-
-
-        // window.addEventListener("mouseover", function () {
-        //   if (value > 0) {
-        //     header.classList.add("active")
-        //   }
-        //   else if () {
-        //     header.classList.remove("active")
-        //   }
-        //   console.log(value)
-
-        //   body.style.background = `radial-gradient(ellipse at bottom, rgb(0, 0, 0) 0%, rgb(12, 41, 65) ${80 + 10 * (value * 0.03)}%)`
-        // })
       </script>
       <%- include("./partials/scripts") -%>
 </body>
