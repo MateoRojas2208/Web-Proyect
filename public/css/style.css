@@ -116,21 +116,3 @@ body {
   }
 } 
 
-.cards {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding-top: 140px;
-}
-
-.carta {
-  width: 200px !important;
-  height: 356px;
-  padding: 20px;
-  flex-wrap: wrap;
-}
-
-.cardImage {
-  width: 100%;
-}
