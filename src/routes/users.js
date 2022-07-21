@@ -1,9 +1,13 @@
+// ************ Require's ************
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
 
+// ************ Controller Require ************
+const userControler = require('../controllers/userControler');
+
+/* GET users listing. */
+router.get('/login', userControler.login);
+router.get('/profile', userControler.profile);
+router.get('/register', userControler.register);
 module.exports = router;
