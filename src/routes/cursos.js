@@ -7,6 +7,5 @@ const cursosControler = require('../controllers/cursosControler');
 
 /* GET home page. */
 router.get('/', cursosControler.cursos);
-router.get('/curso', cursosControler.curso);
 
 module.exports = router;
