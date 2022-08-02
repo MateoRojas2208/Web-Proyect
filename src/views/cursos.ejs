@@ -13,11 +13,11 @@
 
 <body>
   <%- include("./partials/header") -%>
-    <section>
+    <section class="main">
       <ul class="ul-cards">
         <% for( let i=0; i < cursos.length; i++ ) { %>
           <li>
-            <div class="card" data-state="#about">
+            <div class="card" data-state="#about" id="card<%= cursos[i].id %>">
               <div class="card-header">
                 <div class="card-cover"
                   style="background-image: url('https://images.unsplash.com/photo-1549068106-b024baf5062d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80')">
@@ -129,28 +129,101 @@
         <%- include("./partials/scripts") -%>
           <script>
             const buttons = document.querySelectorAll(".card-buttons button");
-            const sections = document.querySelectorAll(".card-section");
-            const card = document.querySelector(".card");
+            const contactSecc = document.querySelectorAll("#contact");
+            const aboutSecc = document.querySelectorAll("#about");
+            const experienceSecc = document.querySelectorAll("#experience");
+            const card = document.querySelectorAll(".card");
             //Hacer que en el eval sea = document.querySelectorAll() a la carta que le corresponde y arreglar codigo de abajo para que sea individual para cada carta 
-            for (let j=0; j<=20 ; j++){
-              eval('const ' + "card" + j)
-            }
+            // for (let j = 0; j <= 20; j++) {
+            //   eval('const ' + "card" + j + ' = document.getElementById("card' + j + '")')
+            // }
+            card.forEach((btn) => {
+              console.log(btn.lastElementChild.children[3].children[0])
+              console.log(btn.lastElementChild.children[3].children[1])
+              console.log(btn.lastElementChild.children[3].children[2])
+              const handleButtonClick = (e) => {
+                const targetSection = e.target.getAttribute("data-section");
+                const section = document.querySelector(targetSection);
+                card.forEach((cardInd) => {cardInd.classList.remove("is-active")})
 
-            const handleButtonClick = (e) => {
-              const targetSection = e.target.getAttribute("data-section");
-              const section = document.querySelector(targetSection);
-              targetSection !== "#about"
-                ? card.classList.add("is-active")
-                : card.classList.remove("is-active");
-              card.setAttribute("data-state", targetSection);
-              sections.forEach((s) => s.classList.remove("is-active"));
-              buttons.forEach((b) => b.classList.remove("is-active"));
-              e.target.classList.add("is-active");
-              section.classList.add("is-active");
-            };
-            buttons.forEach((btn) => {
+                if(targetSection == "#about"){
+                  btn.lastElementChild.children[1].classList.remove("is-active")
+                  btn.lastElementChild.children[2].classList.remove("is-active")
+                  btn.lastElementChild.children[3].children[1].classList.remove("is-active");
+                  btn.lastElementChild.children[3].children[2].classList.remove("is-active");
+                  btn.lastElementChild.children[0].classList.add("is-active")
+                  btn.lastElementChild.children[3].children[0].classList.add("is-active");
+
+                  console.log(btn.lastElementChild.children[0], "111111111")
+                }else if (targetSection == "#experience"){
+                  btn.lastElementChild.children[0].classList.remove("is-active")
+                  btn.lastElementChild.children[2].classList.remove("is-active")
+                  btn.lastElementChild.children[3].children[0].classList.remove("is-active");
+                  btn.lastElementChild.children[3].children[2].classList.remove("is-active");
+                  btn.lastElementChild.children[1].classList.add("is-active")
+                  btn.lastElementChild.children[3].children[1].classList.add("is-active");
+
+                  console.log(btn.lastElementChild.children[1], "22222222")
+                }else if (targetSection == "#contact"){
+                  btn.lastElementChild.children[0].classList.remove("is-active")
+                  btn.lastElementChild.children[1].classList.remove("is-active")
+                  btn.lastElementChild.children[3].children[0].classList.remove("is-active");
+                  btn.lastElementChild.children[3].children[1].classList.remove("is-active");
+                  btn.lastElementChild.children[2].classList.add("is-active")
+                  btn.lastElementChild.children[3].children[2].classList.add("is-active");
+
+                  console.log(btn.lastElementChild.children[2], "33333333")
+                }
+                // targetSection !== "#about"
+                //   ? btn.classList.add("is-active")
+                //   : btn.classList.remove("is-active");
+                // btn.setAttribute("data-state", targetSection);
+                // sections.forEach((s) => s.classList.remove("is-active"));
+                // buttons.forEach((b) => b.classList.remove("is-active"));
+                // btn.card-main.classList.add("is-active");
+                // section.classList.add("is-active");
+
+              }
               btn.addEventListener("click", handleButtonClick);
-            });
+            })
+
+
+
+            // const handleButtonClick = (e) => {
+            //   const targetSection = e.target.getAttribute("data-section");
+            //   const section = document.querySelector(targetSection);
+            //   targetSection !== "#about"
+            //     ? card.forEach((h) => h.classList.add("is-active"))
+            //     : card.forEach((g) => g.classList.remove("is-active"));
+            //   card.forEach((f) => f.setAttribute("data-state", targetSection));
+            //   sections.forEach((s) => s.classList.remove("is-active"));
+            //   buttons.forEach((b) => b.classList.remove("is-active"));
+            //   e.target.classList.add("is-active");
+            //   section.classList.add("is-active");
+            // };
+            // buttons.forEach((btn) => {
+            //   const handleButtonClick = (e) => {
+            //     const targetSection = e.target.getAttribute("data-section");
+            //     const buttonId = e.target.getAttribute("id");
+            //     const section = document.querySelectorAll(targetSection);
+
+            //     section.forEach((s) => s.classList.remove("is-active"));
+            //     buttons.forEach((b) => b.classList.remove("is-active"));
+
+            //     contactSecc.forEach(function (element1) {
+            //       card.forEach(function (element2) {
+            //         if (e.id = element1.id = element2.id) {
+            //           const cardSection = document.querySelector(`#${e.id}`)
+            //           console.log(cardSection);
+
+            //         };
+            //       })
+            //     });
+            //     btn.classList.remove("is-active");
+            //   };
+            //   btn.addEventListener("click", handleButtonClick);
+            // });
+
           </script>
       </div>
 </body>
