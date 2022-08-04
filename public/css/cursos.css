@@ -10,7 +10,13 @@
 .main{
   margin-top: 150px;
 }
+.card::-webkit-scrollbar {
+  display: none;
+}
+
 .card {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
   max-width: 340px;
   margin: auto;
   overflow-y: auto;
