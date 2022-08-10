@@ -5,7 +5,10 @@ const router = express.Router();
 // ************ Controller Require ************
 const cursosControler = require('../controllers/cursosControler');
 
-/* GET home page. */
+/* GET al the courses. */
 router.get('/', cursosControler.cursos);
+
+/* GET course information */
+router.get('/detail/:id', cursosControler.detail);
 
 module.exports = router;

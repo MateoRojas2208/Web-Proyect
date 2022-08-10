@@ -127,6 +127,7 @@
     <%- include("./partials/footer") -%>
       <div class="scripts">
         <%- include("./partials/scripts") -%>
+        
           <script>
             const buttons = document.querySelectorAll(".card-buttons button");
             const contactSecc = document.querySelectorAll("#contact");
@@ -138,9 +139,6 @@
             //   eval('const ' + "card" + j + ' = document.getElementById("card' + j + '")')
             // }
             card.forEach((btn) => {
-              console.log(btn.lastElementChild.children[3].children[0])
-              console.log(btn.lastElementChild.children[3].children[1])
-              console.log(btn.lastElementChild.children[3].children[2])
               const handleButtonClick = (e) => {
                 const targetSection = e.target.getAttribute("data-section");
                 const section = document.querySelector(targetSection);
@@ -154,7 +152,7 @@
                   btn.lastElementChild.children[0].classList.add("is-active")
                   btn.lastElementChild.children[3].children[0].classList.add("is-active");
 
-                  console.log(btn.lastElementChild.children[0], "111111111")
+                  // console.log(btn.lastElementChild.children[0], "111111111")
                 }else if (targetSection == "#experience"){
                   btn.lastElementChild.children[0].classList.remove("is-active")
                   btn.lastElementChild.children[2].classList.remove("is-active")
@@ -163,7 +161,7 @@
                   btn.lastElementChild.children[1].classList.add("is-active")
                   btn.lastElementChild.children[3].children[1].classList.add("is-active");
 
-                  console.log(btn.lastElementChild.children[1], "22222222")
+                  // console.log(btn.lastElementChild.children[1], "22222222")
                 }else if (targetSection == "#contact"){
                   btn.lastElementChild.children[0].classList.remove("is-active")
                   btn.lastElementChild.children[1].classList.remove("is-active")
@@ -172,7 +170,7 @@
                   btn.lastElementChild.children[2].classList.add("is-active")
                   btn.lastElementChild.children[3].children[2].classList.add("is-active");
 
-                  console.log(btn.lastElementChild.children[2], "33333333")
+                  // console.log(btn.lastElementChild.children[2], "33333333")
                 }
 
               }

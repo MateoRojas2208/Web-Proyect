@@ -4,15 +4,22 @@ const db = require('../../database/models');
 const Course = db.Course;
 
 const controller = {
-    cursos: (req, res) => {
+	cursos: (req, res) => {
 		Course.findAll()
 			.then(course => {
-				return res.render('cursos', {cursos: course});
+				return res.render('cursos', { cursos: course });
 			})
 	},
-	curso: (req, res) => {
-		res.render('curso', { title: 'Cartas' });
+	detail: (req, res) => {
+		var detailId = req.params.id
+		Course.findAll({
+			where: {
+				id: detailId
+			}
+		})
+		.then(course => {
+			return res.render('cursos', { cursos: course });
+		})
 	}
-    
 }
 module.exports = controller
