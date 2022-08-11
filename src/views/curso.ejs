@@ -5,22 +5,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <!----======== CSS ======== -->
     <%- include("./partials/head") -%>
+        <link rel="stylesheet" href="/css/curso.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body>
+<body id="body1">
     <%- include("./partials/header") -%>
-    <h1>
-        <% cursos.id %> 
-        <% curos.name%> 
-        <% curos.long_info%> 
-    </h1>
-    
-    <%- include("./partials/footer") -%>
-    <div class="scripts">
-    <%- include("./partials/scripts") -%>
-    </div>
+        <div class="espacio"></div>
+        <div class="banner sticky-nav"> WELCOME TO MY SITE WHERE YOU CAN FIND A RANGE OF CREATIVE, HIGH-QUALITY DESIGNS
+            THAT CAN HELP YOUR BUSINESS FLOURISH.</div>
+        <div class="three-boxes">
+            <div class="child-box" data-aos="fade-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+            </div>
+            <div class="child-box"></div>
+            <div class="child-box" data-aos="fade-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"></div>
+        </div>
+        <div class="profile-container">
+            <div class="profile-child" data-aos="flip-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+            </div>
+            <div class="profile-child" data-aos="flip-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+            </div>
+            <div class="profile-child" data-aos="flip-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+            </div>
+        </div>
+        <div class="recommendations">
+            <div class="recommendation" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="1500">
+            </div>
+            <div class="recommendation" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="1500">
+            </div>
+            <div class="recommendation" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="1500">
+            </div>
+            <div class="recommendation" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="1500">
+            </div>
+            <div class="recommendation" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="1500">
+            </div>
+            <div class="recommendation" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="1500">
+            </div>
+            <div class="recommendation" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="1500">
+            </div>
+            <div class="recommendation" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="1500">
+            </div>
+        </div>
+        <h1>
+            <%= cursos[0].id%>
+        </h1>
+        <h1>
+            <%= cursos[0].name%>
+        </h1>
+        <h1>
+            <%= cursos[0].price%>
+        </h1>
+        <h1>
+            <%= cursos[0].short_info%>
+        </h1>
+        <h1>
+            <%= cursos[0].long_info%>
+        </h1>
+        <h1>
+            <%= cursos[0].image_short%>
+        </h1>
+        <h1>
+            <%= cursos[0].image_long%>
+        </h1>
+        <%- include("./partials/scripts") -%>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
 </body>
+
 </html>

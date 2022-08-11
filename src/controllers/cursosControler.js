@@ -11,14 +11,13 @@ const controller = {
 			})
 	},
 	detail: (req, res) => {
-		var detailId = req.params.id
 		Course.findAll({
 			where: {
-				id: detailId
+				id: req.params.id
 			}
 		})
-		.then(course => {
-			return res.render('cursos', { cursos: course });
+		.then(cour => {
+			res.render('curso', { cursos: cour });
 		})
 	}
 }
